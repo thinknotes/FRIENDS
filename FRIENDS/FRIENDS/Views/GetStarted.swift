@@ -10,67 +10,69 @@ import SwiftUI
 struct GetStarted: View {
     var body: some View {
 
-        VStack {
-            
+        NavigationStack {
             VStack {
                 
-                Text("FRIENDS")
-                    .font(.custom("Assistant-ExtraBold", size: 25))
-                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
-                    .padding()
-                    .bold()
-                    .offset(y: -70)
-//                    .foregroundColor(Color("red2"))
-                    .foregroundColor(.white)
-                
-                
-                
-                Text("Find Your Next BFF")
-                    .font(.custom("Assistant-Regular", size: 40))
-                    .foregroundColor(.white)
-//                    .foregroundColor(Color("red2"))
-                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
-                    .padding()
-                    .offset(y: -230)
-                
-                Text("Discover people near you")
-                    .font(.custom("Assistant-Regular", size: 20))
-                    .foregroundColor(.white)
-//                    .foregroundColor(Color("red2"))
-                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
-                    .padding()
-                    .offset(y: -400)
-                
-                
-                VStack {
-                    Button(action: {
+                    
+                    Text("FRIENDS")
+                        .font(.custom("Assistant-ExtraBold", size: 25))
+                        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
+                        .padding()
+                        .bold()
+                        .offset(y: -70)
+                        .foregroundColor(.white)
+                    
+                    
+                    
+                    Text("Find Your Next BFF")
+                        .font(.custom("Assistant-Regular", size: 40))
+                        .foregroundColor(.white)
+                        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
+                        .padding()
+                        .offset(y: -230)
+                    
+                    Text("Discover people near you")
+                        .font(.custom("Assistant-Regular", size: 20))
+                        .foregroundColor(.white)
+                        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
+                        .padding()
+                        .offset(y: -400)
+                    
+                    
+                    VStack {
+                        NavigationLink(destination: {
+                            NewAccount().navigationBarBackButtonHidden(true)
+                        }, label: {
+                            Text("Get Started")
+                                .frame(width: 200, height: 30)
+                                .font(.custom("Assistant-Regular", size: 25))
+                                .padding()
+                                .background(Capsule().fill(.white))
+                                .foregroundColor(.blue)
+                        })
+                        .padding()
+//
+                     
                         
-                    }, label: {
-                        Text("Get Started")
-                            .frame(width: 200, height: 30)
-                            .font(.custom("Assistant-Regular", size: 25))
-                            .padding()
-                            .background(Capsule().fill(.white))
-//                            .background(Capsule().fill(Color("red2")))
-                            .foregroundColor(.pink4)
-                        
-                            
-                            
-                            
-                    })
-                 
-                   
-                   
+                        NavigationLink(destination: Login(), label: {
+                            Text("Already have an account?")
+                                .font(.custom("Assistant-SemiBold", size: 15))
+                                .foregroundColor(.white)
+                        })
+                       
+                       
+                    }
+                    
                 }
-                
-            }
+            .background(LinearGradient(gradient: Gradient(colors: [Color("blue4"), Color("blue"), Color("blue3"), Color("blue4") ]), startPoint: .leading, endPoint: .top))
+            
             
             
              
             
             
         }
-        .background(LinearGradient(gradient: Gradient(colors: [Color("pink"), Color("pink2"), Color("pink3"), Color("pink4") ]), startPoint: .leading, endPoint: .top))
+       
         
        
         
@@ -84,9 +86,3 @@ struct GetStarted: View {
 }
 
 
-//VStack {
-//    LinearGradient(gradient: Gradient(colors: [Color("pink"), Color("pink2"), Color("pink3"), Color("pink4") ]), startPoint: .leading, endPoint: /*@START_MENU_TOKEN@*/.top/*@END_MENU_TOKEN@*/)
-//    
-//    
-//}
-//.edgesIgnoringSafeArea(.all)

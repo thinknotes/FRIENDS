@@ -14,6 +14,9 @@
 		337EF1572BDAB11D002CF535 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 337EF1562BDAB11D002CF535 /* Launch Screen.storyboard */; };
 		337EF15A2BDAB256002CF535 /* GetStarted.swift in Sources */ = {isa = PBXBuildFile; fileRef = 337EF1592BDAB256002CF535 /* GetStarted.swift */; };
 		337EF15C2BDAC88F002CF535 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 337EF15B2BDAC88F002CF535 /* Login.swift */; };
+		337EF15E2BDC0626002CF535 /* NewAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 337EF15D2BDC0626002CF535 /* NewAccount.swift */; };
+		337EF1622BDC14E3002CF535 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 337EF1612BDC14E3002CF535 /* User.swift */; };
+		337EF1642BDC1721002CF535 /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 337EF1632BDC1721002CF535 /* Auth.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +36,9 @@
 		337EF1562BDAB11D002CF535 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		337EF1592BDAB256002CF535 /* GetStarted.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetStarted.swift; sourceTree = "<group>"; };
 		337EF15B2BDAC88F002CF535 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
+		337EF15D2BDC0626002CF535 /* NewAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewAccount.swift; sourceTree = "<group>"; };
+		337EF1612BDC14E3002CF535 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		337EF1632BDC1721002CF535 /* Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Auth.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +71,8 @@
 		337EF13A2BDAAD53002CF535 /* FRIENDS */ = {
 			isa = PBXGroup;
 			children = (
+				337EF1602BDC1442002CF535 /* Users */,
+				337EF15F2BDC1438002CF535 /* Auth */,
 				337EF1582BDAB238002CF535 /* Views */,
 				337EF1552BDAB109002CF535 /* LaunchScreen */,
 				337EF1542BDAAF03002CF535 /* Login */,
@@ -120,6 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				337EF15B2BDAC88F002CF535 /* Login.swift */,
+				337EF15D2BDC0626002CF535 /* NewAccount.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -138,6 +147,22 @@
 				337EF1592BDAB256002CF535 /* GetStarted.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		337EF15F2BDC1438002CF535 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				337EF1632BDC1721002CF535 /* Auth.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		337EF1602BDC1442002CF535 /* Users */ = {
+			isa = PBXGroup;
+			children = (
+				337EF1612BDC14E3002CF535 /* User.swift */,
+			);
+			path = Users;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -211,8 +236,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				337EF15E2BDC0626002CF535 /* NewAccount.swift in Sources */,
 				337EF15A2BDAB256002CF535 /* GetStarted.swift in Sources */,
+				337EF1622BDC14E3002CF535 /* User.swift in Sources */,
 				337EF13E2BDAAD53002CF535 /* ContentView.swift in Sources */,
+				337EF1642BDC1721002CF535 /* Auth.swift in Sources */,
 				337EF13C2BDAAD53002CF535 /* FRIENDSApp.swift in Sources */,
 				337EF15C2BDAC88F002CF535 /* Login.swift in Sources */,
 			);
