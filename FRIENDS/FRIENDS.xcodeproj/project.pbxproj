@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		331B4CCB2BE0043A00A58C1D /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331B4CCA2BE0043A00A58C1D /* Home.swift */; };
+		331B4CD02BE006CF00A58C1D /* Tabbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331B4CCF2BE006CF00A58C1D /* Tabbar.swift */; };
+		331B4CD42BE15A5500A58C1D /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331B4CD32BE15A5500A58C1D /* Post.swift */; };
 		337EF13C2BDAAD53002CF535 /* FRIENDSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 337EF13B2BDAAD53002CF535 /* FRIENDSApp.swift */; };
 		337EF13E2BDAAD53002CF535 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 337EF13D2BDAAD53002CF535 /* ContentView.swift */; };
 		337EF1402BDAAD55002CF535 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 337EF13F2BDAAD55002CF535 /* Assets.xcassets */; };
@@ -16,10 +19,12 @@
 		337EF15C2BDAC88F002CF535 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 337EF15B2BDAC88F002CF535 /* Login.swift */; };
 		337EF15E2BDC0626002CF535 /* NewAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 337EF15D2BDC0626002CF535 /* NewAccount.swift */; };
 		337EF1622BDC14E3002CF535 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 337EF1612BDC14E3002CF535 /* User.swift */; };
-		337EF1642BDC1721002CF535 /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 337EF1632BDC1721002CF535 /* Auth.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		331B4CCA2BE0043A00A58C1D /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		331B4CCF2BE006CF00A58C1D /* Tabbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tabbar.swift; sourceTree = "<group>"; };
+		331B4CD32BE15A5500A58C1D /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		337EF1382BDAAD53002CF535 /* FRIENDS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FRIENDS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		337EF13B2BDAAD53002CF535 /* FRIENDSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FRIENDSApp.swift; sourceTree = "<group>"; };
 		337EF13D2BDAAD53002CF535 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -38,7 +43,6 @@
 		337EF15B2BDAC88F002CF535 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		337EF15D2BDC0626002CF535 /* NewAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewAccount.swift; sourceTree = "<group>"; };
 		337EF1612BDC14E3002CF535 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		337EF1632BDC1721002CF535 /* Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Auth.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +56,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		331B4CCE2BE006C200A58C1D /* Tabbar */ = {
+			isa = PBXGroup;
+			children = (
+				331B4CCF2BE006CF00A58C1D /* Tabbar.swift */,
+			);
+			path = Tabbar;
+			sourceTree = "<group>";
+		};
+		331B4CD22BE15A4300A58C1D /* Post */ = {
+			isa = PBXGroup;
+			children = (
+				331B4CD32BE15A5500A58C1D /* Post.swift */,
+			);
+			path = Post;
+			sourceTree = "<group>";
+		};
 		337EF12F2BDAAD53002CF535 = {
 			isa = PBXGroup;
 			children = (
@@ -72,7 +92,6 @@
 			isa = PBXGroup;
 			children = (
 				337EF1602BDC1442002CF535 /* Users */,
-				337EF15F2BDC1438002CF535 /* Auth */,
 				337EF1582BDAB238002CF535 /* Views */,
 				337EF1552BDAB109002CF535 /* LaunchScreen */,
 				337EF1542BDAAF03002CF535 /* Login */,
@@ -120,6 +139,9 @@
 		337EF1532BDAAEFC002CF535 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				331B4CD22BE15A4300A58C1D /* Post */,
+				331B4CCE2BE006C200A58C1D /* Tabbar */,
+				331B4CCA2BE0043A00A58C1D /* Home.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -147,14 +169,6 @@
 				337EF1592BDAB256002CF535 /* GetStarted.swift */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		337EF15F2BDC1438002CF535 /* Auth */ = {
-			isa = PBXGroup;
-			children = (
-				337EF1632BDC1721002CF535 /* Auth.swift */,
-			);
-			path = Auth;
 			sourceTree = "<group>";
 		};
 		337EF1602BDC1442002CF535 /* Users */ = {
@@ -239,9 +253,11 @@
 				337EF15E2BDC0626002CF535 /* NewAccount.swift in Sources */,
 				337EF15A2BDAB256002CF535 /* GetStarted.swift in Sources */,
 				337EF1622BDC14E3002CF535 /* User.swift in Sources */,
+				331B4CD02BE006CF00A58C1D /* Tabbar.swift in Sources */,
 				337EF13E2BDAAD53002CF535 /* ContentView.swift in Sources */,
-				337EF1642BDC1721002CF535 /* Auth.swift in Sources */,
 				337EF13C2BDAAD53002CF535 /* FRIENDSApp.swift in Sources */,
+				331B4CD42BE15A5500A58C1D /* Post.swift in Sources */,
+				331B4CCB2BE0043A00A58C1D /* Home.swift in Sources */,
 				337EF15C2BDAC88F002CF535 /* Login.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

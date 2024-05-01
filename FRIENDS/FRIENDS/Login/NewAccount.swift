@@ -15,8 +15,19 @@ struct NewAccount: View {
     @State var lastName: String = ""
     @State var userName: String = ""
     @State var city: String = ""
+//    @State var listofNewUsers: [NewUser]
+//    @State var listOfCurrentUsers: [User]
+    @Environment(\.dismiss) var dimiss
+    @State var showView: Bool = false
 //    @Binding var user: [User]
 //    @State private var users: [User] = []
+    
+    
+    @Binding var users: [User] 
+    
+    @State private var loggedin: [User] = []
+    
+    
     var body: some View {
         NavigationStack {
             ScrollView(.vertical) {
@@ -63,13 +74,7 @@ struct NewAccount: View {
                         .padding()
                     
                     
-                    TextField("FullName", text: $fullName)
-                        .padding()
-                        .autocapitalization(.none)
-                        .background()
-                        .cornerRadius(10)
-                        .padding(.horizontal, 24)
-                        .padding()
+                    
                     
                     
                     TextField("UserName", text: $userName)
@@ -112,6 +117,17 @@ struct NewAccount: View {
                     VStack {
                         
                         Button(action: {
+                            
+                            if !firstName.isEmpty && !lastName.isEmpty && !userName.isEmpty && !email.isEmpty && !password.isEmpty && !city.isEmpty {
+                                
+                                let crateNewUser = User(fristName: firstName, lastNane: lastName, userName: userName, email: email, password: password, city: city)
+                                loggedin.append(crateNewUser)
+                                users.append(crateNewUser)
+                                print("DEBUG: List of New Users: \(users.count)   \(users)")
+                                showView = true
+                            }
+                            
+//                            dimiss()
 //
                         }, label: {
                             Text("Sign Up")
@@ -124,7 +140,11 @@ struct NewAccount: View {
                     }
                     .padding()
                     
-                    
+                    NavigationLink(destination:
+                                    Login(allUsers: users).navigationBarBackButtonHidden(true)
+                    , isActive: $showView){
+                        EmptyView()
+                    }
                     
                     HStack {
                         Rectangle()
@@ -158,7 +178,7 @@ struct NewAccount: View {
                     
                     
                     NavigationLink(destination: {
-                        Login().navigationBarBackButtonHidden(true)
+                        Login(allUsers: users).navigationBarBackButtonHidden(true)
                     }, label: {
                         HStack {
                             Text("have an account?")
@@ -187,5 +207,5 @@ struct NewAccount: View {
 
 
 #Preview {
-    NewAccount()
+    NewAccount(users: .constant([]))
 }

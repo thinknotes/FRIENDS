@@ -11,19 +11,25 @@ struct Login: View {
     @State var email: String = ""
     @State var password: String = ""
     @State private var isChecked: Bool = false
-    @StateObject var authViewModel = ViewModel()
+    @State private var wrong: Bool = false
+    @State private var showView: Bool = false
+    @State  var allUsers: [User]
+    
     var body: some View {
-        NavigationStack {
-            VStack {
-               
+        
+        
+       
+            NavigationStack {
+                VStack {
+                    
                     Spacer()
                     Spacer()
                     Spacer()
                     Spacer()
                     Spacer()
                     Spacer()
-
-
+                    
+                    
                     
                     
                     Text("FRIENDS")
@@ -33,22 +39,22 @@ struct Login: View {
                         .foregroundColor(.white)
                     
                     VStack {
-                            TextField("Email", text: $email)
-                                .padding()
-                                .autocapitalization(.none)
-                                .background()
-                                .cornerRadius(10)
-                                .padding(.horizontal, 24)
-                       
+                        TextField("Email or Username", text: $email)
+                            .padding()
+                            .autocapitalization(.none)
+                            .background()
+                            .cornerRadius(10)
+                            .padding(.horizontal, 24)
                         
-                            
-                            SecureField("Passsword", text: $password)
-                                .padding()
-                                .autocapitalization(.none)
-                                .background()
-                                .cornerRadius(10)
-                                .padding(.horizontal, 24)
-                       
+                        
+                        
+                        SecureField("Passsword", text: $password)
+                            .padding()
+                            .autocapitalization(.none)
+                            .background()
+                            .cornerRadius(10)
+                            .padding(.horizontal, 24)
+                        
                         
                         
                         Toggle(isOn: $isChecked) {
@@ -63,15 +69,22 @@ struct Login: View {
                         
                         
                         Button(action: {
-                            
+                            authenciation()
                         }, label: {
                             Text("Sign In")
-                                .frame(width: 200, height: 30)
-                                .font(.custom("Assistant-Regular", size: 25))
-                                .padding()
-                                .background(Capsule().fill(.white))
-                                .foregroundColor(.blue)
+                            .frame(width: 200, height: 30)
+                            .font(.custom("Assistant-Regular", size: 25))
+                            .padding()
+                            .background(Capsule().fill(.white))
+                            .foregroundColor(.blue)
                         })
+                           
+                        
+                        NavigationLink(destination: Home().navigationBarBackButtonHidden(true), isActive: $showView) {
+                            EmptyView()
+                        }
+                        
+//
                         
                         
                         
@@ -94,7 +107,7 @@ struct Login: View {
                                 .resizable()
                                 .scaledToFit()
                                 .frame(width: 20, height: 20)
-                                
+                            
                             
                             Text("Continue with Apple")
                                 .font(.custom("Assistant-SemiBold", size: 15))
@@ -103,11 +116,11 @@ struct Login: View {
                         
                         Spacer()
                         
-//                        Divider()
+                            //                        Divider()
                         
                         
                         NavigationLink(destination: {
-                            NewAccount().navigationBarBackButtonHidden(true)
+                            NewAccount(users: $allUsers).navigationBarBackButtonHidden(true)
                         }, label: {
                             HStack {
                                 Text("Don't have an account?")
@@ -115,25 +128,58 @@ struct Login: View {
                                 
                                 Text("Create One!")
                                     .font(.custom("Assistant-SemiBold", size: 15))
-                                    .foregroundColor(.blue)
+                                    .foregroundColor(.white)
                             }
                         })
                         .padding()
                     }
-                
-                
-//                Spacer()
+                    
+                    
+                        //                Spacer()
+                }
+                .background(LinearGradient(gradient: Gradient(colors: [Color("blue4"), Color("blue"), Color("blue3"), Color("blue4") ]), startPoint: .leading, endPoint: .top))
             }
-            .background(LinearGradient(gradient: Gradient(colors: [Color("blue4"), Color("blue"), Color("blue3"), Color("blue4") ]), startPoint: .leading, endPoint: .top))
+            .alert("Wrong Username/Email or Password", isPresented: $wrong) {
+                    //
+            }
         }
-       
-       
+    
+    func authenciation() {
+        print("DEBUG: All Users: \(allUsers)")
+        
+        for user in allUsers {
+            if user.userName == email && user.password == password {
+                print("DEBUG: Match Succesfully")
+                showView = true
+            } else {
+                print("DEBUG: Not Runing")
+            }
+            
+            
+   
+        }
+        
+        
+        
     }
-}
+    
+        //Go through all uses and compare the username or email and when you find a macth compre the password. When you find a mactch load in the new view(Home)
+    
+    
+//    @State  var allUsers: [User] = [
+//        User(fristName: "Mark", lastNane: "Green", userName: "markgreen221", password: "life", city: "Santa Cruz"),
+//        User(fristName: "John", lastNane: "Wilkson", userName: "johnwilkson", password: "2223", city: "New York")
+//    ]
+    }
+
+
+
 
 #Preview {
-    Login()
+    Login(allUsers: [])
 }
+
+
 
 struct CheckboxStyle: ToggleStyle {
     
@@ -151,5 +197,6 @@ struct CheckboxStyle: ToggleStyle {
         
     }
 }
+
 
 

@@ -8,6 +8,12 @@
 import SwiftUI
 
 struct GetStarted: View {
+    
+    @State  var allUsers: [User] = [
+        User(fristName: "Mark", lastNane: "Green", userName: "markgreen221", password: "life", city: "Santa Cruz"),
+        User(fristName: "John", lastNane: "Wilkson", userName: "johnwilkson", password: "2223", city: "New York")
+    ]
+    
     var body: some View {
 
         NavigationStack {
@@ -41,7 +47,7 @@ struct GetStarted: View {
                     
                     VStack {
                         NavigationLink(destination: {
-                            NewAccount().navigationBarBackButtonHidden(true)
+                            NewAccount(users: .constant([])).navigationBarBackButtonHidden(true)
                         }, label: {
                             Text("Get Started")
                                 .frame(width: 200, height: 30)
@@ -54,7 +60,7 @@ struct GetStarted: View {
 //
                      
                         
-                        NavigationLink(destination: Login(), label: {
+                        NavigationLink(destination: Login(allUsers: allUsers).navigationBarBackButtonHidden(true), label: {
                             Text("Already have an account?")
                                 .font(.custom("Assistant-SemiBold", size: 15))
                                 .foregroundColor(.white)
