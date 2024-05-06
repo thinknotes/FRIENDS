@@ -19,6 +19,9 @@
 		337EF15C2BDAC88F002CF535 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 337EF15B2BDAC88F002CF535 /* Login.swift */; };
 		337EF15E2BDC0626002CF535 /* NewAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 337EF15D2BDC0626002CF535 /* NewAccount.swift */; };
 		337EF1622BDC14E3002CF535 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 337EF1612BDC14E3002CF535 /* User.swift */; };
+		33AFB1D22BE3E3DF00744909 /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33AFB1D12BE3E3DF00744909 /* Search.swift */; };
+		33AFB1D52BE53F0B00744909 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33AFB1D42BE53F0B00744909 /* Profile.swift */; };
+		33AFB1D72BE93B6100744909 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33AFB1D62BE93B6100744909 /* ProfileViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +46,9 @@
 		337EF15B2BDAC88F002CF535 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		337EF15D2BDC0626002CF535 /* NewAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewAccount.swift; sourceTree = "<group>"; };
 		337EF1612BDC14E3002CF535 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		33AFB1D12BE3E3DF00744909 /* Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
+		33AFB1D42BE53F0B00744909 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		33AFB1D62BE93B6100744909 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +145,8 @@
 		337EF1532BDAAEFC002CF535 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				33AFB1D32BE53A0F00744909 /* Profile */,
+				33AFB1D02BE3E3CC00744909 /* Search */,
 				331B4CD22BE15A4300A58C1D /* Post */,
 				331B4CCE2BE006C200A58C1D /* Tabbar */,
 				331B4CCA2BE0043A00A58C1D /* Home.swift */,
@@ -177,6 +185,23 @@
 				337EF1612BDC14E3002CF535 /* User.swift */,
 			);
 			path = Users;
+			sourceTree = "<group>";
+		};
+		33AFB1D02BE3E3CC00744909 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				33AFB1D12BE3E3DF00744909 /* Search.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		33AFB1D32BE53A0F00744909 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				33AFB1D42BE53F0B00744909 /* Profile.swift */,
+				33AFB1D62BE93B6100744909 /* ProfileViewModel.swift */,
+			);
+			path = Profile;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -256,7 +281,10 @@
 				331B4CD02BE006CF00A58C1D /* Tabbar.swift in Sources */,
 				337EF13E2BDAAD53002CF535 /* ContentView.swift in Sources */,
 				337EF13C2BDAAD53002CF535 /* FRIENDSApp.swift in Sources */,
+				33AFB1D72BE93B6100744909 /* ProfileViewModel.swift in Sources */,
 				331B4CD42BE15A5500A58C1D /* Post.swift in Sources */,
+				33AFB1D22BE3E3DF00744909 /* Search.swift in Sources */,
+				33AFB1D52BE53F0B00744909 /* Profile.swift in Sources */,
 				331B4CCB2BE0043A00A58C1D /* Home.swift in Sources */,
 				337EF15C2BDAC88F002CF535 /* Login.swift in Sources */,
 			);

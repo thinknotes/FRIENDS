@@ -80,7 +80,7 @@ struct Login: View {
                         })
                            
                         
-                        NavigationLink(destination: Home().navigationBarBackButtonHidden(true), isActive: $showView) {
+                        NavigationLink(destination: Home(users: allUsers).navigationBarBackButtonHidden(true), isActive: $showView) {
                             EmptyView()
                         }
                         
@@ -163,13 +163,6 @@ struct Login: View {
         
     }
     
-        //Go through all uses and compare the username or email and when you find a macth compre the password. When you find a mactch load in the new view(Home)
-    
-    
-//    @State  var allUsers: [User] = [
-//        User(fristName: "Mark", lastNane: "Green", userName: "markgreen221", password: "life", city: "Santa Cruz"),
-//        User(fristName: "John", lastNane: "Wilkson", userName: "johnwilkson", password: "2223", city: "New York")
-//    ]
     }
 
 

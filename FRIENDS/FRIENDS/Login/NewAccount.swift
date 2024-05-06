@@ -186,7 +186,7 @@ struct NewAccount: View {
                             
                             Text("Sign In!")
                                 .font(.custom("Assistant-SemiBold", size: 15))
-                                .foregroundColor(.blue)
+                                .foregroundColor(.white)
                         }
                     })
                     .padding()
