@@ -14,6 +14,8 @@ struct GetStarted: View {
         User(fristName: "John", lastNane: "Wilkson", userName: "johnwilkson", password: "2223", city: "New York")
     ]
     
+    @State private var loggedin: [User] = []
+    
     var body: some View {
 
         NavigationStack {
@@ -60,7 +62,7 @@ struct GetStarted: View {
 //
                      
                         
-                        NavigationLink(destination: Login(allUsers: allUsers).navigationBarBackButtonHidden(true), label: {
+                        NavigationLink(destination: Login(allUsers: allUsers, loggedin: loggedin).navigationBarBackButtonHidden(true), label: {
                             Text("Already have an account?")
                                 .font(.custom("Assistant-SemiBold", size: 15))
                                 .foregroundColor(.white)

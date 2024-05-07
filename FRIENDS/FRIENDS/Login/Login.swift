@@ -14,6 +14,7 @@ struct Login: View {
     @State private var wrong: Bool = false
     @State private var showView: Bool = false
     @State  var allUsers: [User]
+    @State var loggedin: [User]
     
     var body: some View {
         
@@ -80,7 +81,7 @@ struct Login: View {
                         })
                            
                         
-                        NavigationLink(destination: Home(users: allUsers).navigationBarBackButtonHidden(true), isActive: $showView) {
+                        NavigationLink(destination: Home(users: allUsers, loggedin: loggedin).navigationBarBackButtonHidden(true), isActive: $showView) {
                             EmptyView()
                         }
                         
@@ -169,7 +170,7 @@ struct Login: View {
 
 
 #Preview {
-    Login(allUsers: [])
+    Login(allUsers: [], loggedin: [])
 }
 
 

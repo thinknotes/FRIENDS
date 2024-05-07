@@ -10,11 +10,17 @@ import SwiftUI
 struct Profile: View {
     @State private var userName: String = "MarkGreen2221"
     @State private var followers: Int = 27000
-    @State private var following: Int = 732
+    @State private var following: Int = 73
     @State var selectedTab: String = ""
     @Namespace var animation
     @State private var selectedFilter: ProfileViewModel = .posts
     @State private var showEditProfile: Bool = false
+    @State private var fullName: String = ""
+    @State private var newuserName: String = ""
+    @State private var bio: String = ""
+    @State var logedin: [User]
+    
+    
     var body: some View {
         HStack {
             Button(action: {
@@ -34,7 +40,7 @@ struct Profile: View {
                
            }, label: {
                HStack {
-                   Text("\(userName)")
+                   Text("\(logedin[0].userName)")
                        .font(.custom("Assistant-Medium", size: 20))
                        .padding()
                        .offset(x: -30)
@@ -175,7 +181,49 @@ struct Profile: View {
                             .padding()
                         
                         }
+                    VStack {
+                        
+                        Section("Full name") {
+                            TextField("", text: $fullName)
+                                .textFieldStyle(.roundedBorder)
+                                .padding()
+                        }
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        
+                        
+                        Section("User name") {
+                            TextField("", text: $userName)
+                                .textFieldStyle(.roundedBorder)
+                                .padding()
+                        }
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        
+                        Section("Bio") {
+                            TextField("", text: $bio)
+                                .textFieldStyle(.roundedBorder)
+                                .padding()
+                        }
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        
+                        Text("Brief description for your profile")
+                            .foregroundColor(.gray)
+                            .font(.caption)
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                        
+                    }
+                    .padding()
                     
+                    
+                    Button(action: {
+                        showEditProfile.toggle()
+                    }, label: {
+                        Text("Save")
+                            .frame(width: 300, height: 40)
+                            .background(Color.blue)
+                            .foregroundColor(.white)
+                            .cornerRadius(10)
+                            .padding()
+                    })
                 })
                 
                 Button(action: {
@@ -254,7 +302,7 @@ struct Profile: View {
 }
 
 #Preview {
-    Profile()
+    Profile(logedin:  [])
 }
 
 

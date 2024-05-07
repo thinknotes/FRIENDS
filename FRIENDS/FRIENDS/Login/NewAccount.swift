@@ -141,7 +141,7 @@ struct NewAccount: View {
                     .padding()
                     
                     NavigationLink(destination:
-                                    Login(allUsers: users).navigationBarBackButtonHidden(true)
+                                    Login(allUsers: users, loggedin: loggedin).navigationBarBackButtonHidden(true)
                     , isActive: $showView){
                         EmptyView()
                     }
@@ -178,7 +178,7 @@ struct NewAccount: View {
                     
                     
                     NavigationLink(destination: {
-                        Login(allUsers: users).navigationBarBackButtonHidden(true)
+                        Login(allUsers: users, loggedin: loggedin).navigationBarBackButtonHidden(true)
                     }, label: {
                         HStack {
                             Text("have an account?")

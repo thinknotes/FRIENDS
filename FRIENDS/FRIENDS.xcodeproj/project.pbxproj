@@ -22,6 +22,8 @@
 		33AFB1D22BE3E3DF00744909 /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33AFB1D12BE3E3DF00744909 /* Search.swift */; };
 		33AFB1D52BE53F0B00744909 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33AFB1D42BE53F0B00744909 /* Profile.swift */; };
 		33AFB1D72BE93B6100744909 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33AFB1D62BE93B6100744909 /* ProfileViewModel.swift */; };
+		33AFB1DA2BEA7FCB00744909 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33AFB1D92BEA7FCB00744909 /* MainView.swift */; };
+		33AFB1DD2BEA859000744909 /* LocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33AFB1DC2BEA859000744909 /* LocationViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +51,8 @@
 		33AFB1D12BE3E3DF00744909 /* Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
 		33AFB1D42BE53F0B00744909 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		33AFB1D62BE93B6100744909 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		33AFB1D92BEA7FCB00744909 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		33AFB1DC2BEA859000744909 /* LocationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +149,8 @@
 		337EF1532BDAAEFC002CF535 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				33AFB1DB2BEA857C00744909 /* Location */,
+				33AFB1D82BEA7FB900744909 /* Home */,
 				33AFB1D32BE53A0F00744909 /* Profile */,
 				33AFB1D02BE3E3CC00744909 /* Search */,
 				331B4CD22BE15A4300A58C1D /* Post */,
@@ -202,6 +208,22 @@
 				33AFB1D62BE93B6100744909 /* ProfileViewModel.swift */,
 			);
 			path = Profile;
+			sourceTree = "<group>";
+		};
+		33AFB1D82BEA7FB900744909 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				33AFB1D92BEA7FCB00744909 /* MainView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		33AFB1DB2BEA857C00744909 /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				33AFB1DC2BEA859000744909 /* LocationViewModel.swift */,
+			);
+			path = Location;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -276,6 +298,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				337EF15E2BDC0626002CF535 /* NewAccount.swift in Sources */,
+				33AFB1DA2BEA7FCB00744909 /* MainView.swift in Sources */,
 				337EF15A2BDAB256002CF535 /* GetStarted.swift in Sources */,
 				337EF1622BDC14E3002CF535 /* User.swift in Sources */,
 				331B4CD02BE006CF00A58C1D /* Tabbar.swift in Sources */,
@@ -285,6 +308,7 @@
 				331B4CD42BE15A5500A58C1D /* Post.swift in Sources */,
 				33AFB1D22BE3E3DF00744909 /* Search.swift in Sources */,
 				33AFB1D52BE53F0B00744909 /* Profile.swift in Sources */,
+				33AFB1DD2BEA859000744909 /* LocationViewModel.swift in Sources */,
 				331B4CCB2BE0043A00A58C1D /* Home.swift in Sources */,
 				337EF15C2BDAC88F002CF535 /* Login.swift in Sources */,
 			);
@@ -423,9 +447,11 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FRIENDS/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Helps find friends near you";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -452,9 +478,11 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FRIENDS/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Helps find friends near you";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

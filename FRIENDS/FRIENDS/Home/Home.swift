@@ -11,6 +11,7 @@ struct Home: View {
     
     @State private var tabSelection: Int = 1
     @State var users: [User]
+    @State var loggedin: [User]
     
     var body: some View {
         TabView(selection: $tabSelection) {
@@ -23,7 +24,7 @@ struct Home: View {
             Text("Favorites")
                 .tag(3)
             
-            Text("Profile")
+            Profile(logedin: loggedin)
                 .tag(4)
         }
         .overlay(alignment: .bottom) {
@@ -35,5 +36,5 @@ struct Home: View {
 }
 
 #Preview {
-    Home(users: [])
+    Home(users: [], loggedin: [])
 }
