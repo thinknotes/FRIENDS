@@ -121,7 +121,7 @@ struct NewAccount: View {
                             if !firstName.isEmpty && !lastName.isEmpty && !userName.isEmpty && !email.isEmpty && !password.isEmpty && !city.isEmpty {
                                 
                                 let crateNewUser = User(fristName: firstName, lastNane: lastName, userName: userName, email: email, password: password, city: city)
-                                loggedin.append(crateNewUser)
+//                                loggedin.append(crateNewUser)
                                 users.append(crateNewUser)
                                 print("DEBUG: List of New Users: \(users.count)   \(users)")
                                 showView = true

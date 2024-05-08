@@ -15,7 +15,7 @@ struct Home: View {
     
     var body: some View {
         TabView(selection: $tabSelection) {
-            Text("Home")
+            MainView()
                 .tag(1)
             
             Search(allUsers: users)

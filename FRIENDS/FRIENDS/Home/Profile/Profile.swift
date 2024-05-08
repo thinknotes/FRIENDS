@@ -40,7 +40,8 @@ struct Profile: View {
                
            }, label: {
                HStack {
-                   Text("\(logedin[0].userName)")
+                   Text("")
+//                   Text("\(logedin[0].userName)")
                        .font(.custom("Assistant-Medium", size: 20))
                        .padding()
                        .offset(x: -30)

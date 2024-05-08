@@ -49,7 +49,7 @@ struct GetStarted: View {
                     
                     VStack {
                         NavigationLink(destination: {
-                            NewAccount(users: .constant([])).navigationBarBackButtonHidden(true)
+                            NewAccount(users: $allUsers).navigationBarBackButtonHidden(true)
                         }, label: {
                             Text("Get Started")
                                 .frame(width: 200, height: 30)
