@@ -47,7 +47,7 @@ struct StoryCardView: View {
                 
 //                if let story = bundle.stories[index] {
                     
-                Image(bundle.stories[index].imageURL)
+                 Image(bundle.stories[index].imageURL)
                         .resizable()
                         .aspectRatio(contentMode: .fit)
 //                }

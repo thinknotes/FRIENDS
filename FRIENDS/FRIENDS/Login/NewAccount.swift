@@ -27,6 +27,8 @@ struct NewAccount: View {
     
     @State private var loggedin: [User] = []
     
+ 
+    
     
     var body: some View {
         NavigationStack {

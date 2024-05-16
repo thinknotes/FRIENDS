@@ -13,8 +13,12 @@ struct Login: View {
     @State private var isChecked: Bool = false
     @State private var wrong: Bool = false
     @State private var showView: Bool = false
-    @State  var allUsers: [User]
+    @State var allUsers: [User]
+  
     @State var loggedin: [User]
+    
+
+    @State var isLog: Bool = false
     
     var body: some View {
         
@@ -71,6 +75,7 @@ struct Login: View {
                         
                         Button(action: {
                             authenciation()
+                            isLog = true 
                         }, label: {
                             Text("Sign In")
                             .frame(width: 200, height: 30)
@@ -150,6 +155,7 @@ struct Login: View {
         
         for user in allUsers {
             if user.userName == email && user.password == password {
+                loggedin.append(user)
                 print("DEBUG: Match Succesfully")
                 showView = true
             } else {

@@ -155,7 +155,22 @@ struct Search: View {
 
 
 #Preview {
-    Search(allUsers: [User(fristName: "Emily", lastNane: "Green", userName: "emaily@Green", email: "emaily@gmail.com", city: "Seattle"), User(fristName: "John", lastNane: "Doe", userName: "doe@icould.com", city: "none")])
+    Search(allUsers: [
+        
+        
+        User(fristName: "Emily Green", lastNane: "Green", userName: "emaily@Green", email: "emilygreen@gmail.com", city: "Seattle"),
+        User(fristName: "Michael", lastNane: "Smith", userName: "MSmith", email: "smith@icould.com", city: "Las Vegas"),
+        
+        User(fristName: "Jessica", lastNane: "Martinez", userName: "Jessica2450", email: "jessmartinez@", city: "Santa Fe"),
+        
+        User(fristName: "Christopher", lastNane: "Brown", userName: "Chrisisamazing", email: "chris22@gmail.com",  city: "Chicago"),
+        
+        User(fristName: "Amanda", lastNane: "Davis", userName: "Panda44", email: "amandadavis@icloud.com",  city: "San Franscisco")
+    
+    
+    ]
+    
+    )
 }
 
 

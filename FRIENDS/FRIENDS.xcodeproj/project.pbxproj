@@ -27,6 +27,11 @@
 		33AFB1E02BEBD06400744909 /* StoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33AFB1DF2BEBD06400744909 /* StoryModel.swift */; };
 		33AFB1E22BEBD13900744909 /* StoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33AFB1E12BEBD13900744909 /* StoryViewModel.swift */; };
 		33AFB1E42BEBD9AB00744909 /* StoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33AFB1E32BEBD9AB00744909 /* StoryView.swift */; };
+		33AFB1E62BED165100744909 /* FindFriends.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33AFB1E52BED165100744909 /* FindFriends.swift */; };
+		33AFB1E92BED283100744909 /* options.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33AFB1E82BED283100744909 /* options.swift */; };
+		33AFB1EB2BED325300744909 /* NewPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33AFB1EA2BED325300744909 /* NewPost.swift */; };
+		33AFB1EF2BF2614D00744909 /* favorites.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33AFB1EE2BF2614D00744909 /* favorites.swift */; };
+		33AFB1F12BF2654D00744909 /* posts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33AFB1F02BF2654D00744909 /* posts.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +64,11 @@
 		33AFB1DF2BEBD06400744909 /* StoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryModel.swift; sourceTree = "<group>"; };
 		33AFB1E12BEBD13900744909 /* StoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryViewModel.swift; sourceTree = "<group>"; };
 		33AFB1E32BEBD9AB00744909 /* StoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryView.swift; sourceTree = "<group>"; };
+		33AFB1E52BED165100744909 /* FindFriends.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindFriends.swift; sourceTree = "<group>"; };
+		33AFB1E82BED283100744909 /* options.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = options.swift; sourceTree = "<group>"; };
+		33AFB1EA2BED325300744909 /* NewPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPost.swift; sourceTree = "<group>"; };
+		33AFB1EE2BF2614D00744909 /* favorites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = favorites.swift; sourceTree = "<group>"; };
+		33AFB1F02BF2654D00744909 /* posts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = posts.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +86,7 @@
 			isa = PBXGroup;
 			children = (
 				331B4CCF2BE006CF00A58C1D /* Tabbar.swift */,
+				33AFB1EE2BF2614D00744909 /* favorites.swift */,
 			);
 			path = Tabbar;
 			sourceTree = "<group>";
@@ -83,8 +94,12 @@
 		331B4CD22BE15A4300A58C1D /* Post */ = {
 			isa = PBXGroup;
 			children = (
+				33AFB1E72BED27FA00744909 /* NewStory */,
 				33AFB1DE2BEBD03C00744909 /* Story */,
 				331B4CD32BE15A5500A58C1D /* Post.swift */,
+				33AFB1E52BED165100744909 /* FindFriends.swift */,
+				33AFB1EA2BED325300744909 /* NewPost.swift */,
+				33AFB1F02BF2654D00744909 /* posts.swift */,
 			);
 			path = Post;
 			sourceTree = "<group>";
@@ -243,6 +258,14 @@
 			path = Story;
 			sourceTree = "<group>";
 		};
+		33AFB1E72BED27FA00744909 /* NewStory */ = {
+			isa = PBXGroup;
+			children = (
+				33AFB1E82BED283100744909 /* options.swift */,
+			);
+			path = NewStory;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -317,13 +340,18 @@
 				337EF15E2BDC0626002CF535 /* NewAccount.swift in Sources */,
 				33AFB1DA2BEA7FCB00744909 /* MainView.swift in Sources */,
 				337EF15A2BDAB256002CF535 /* GetStarted.swift in Sources */,
+				33AFB1EF2BF2614D00744909 /* favorites.swift in Sources */,
 				33AFB1E42BEBD9AB00744909 /* StoryView.swift in Sources */,
+				33AFB1E92BED283100744909 /* options.swift in Sources */,
 				337EF1622BDC14E3002CF535 /* User.swift in Sources */,
 				331B4CD02BE006CF00A58C1D /* Tabbar.swift in Sources */,
+				33AFB1E62BED165100744909 /* FindFriends.swift in Sources */,
 				337EF13E2BDAAD53002CF535 /* ContentView.swift in Sources */,
 				337EF13C2BDAAD53002CF535 /* FRIENDSApp.swift in Sources */,
+				33AFB1F12BF2654D00744909 /* posts.swift in Sources */,
 				33AFB1D72BE93B6100744909 /* ProfileViewModel.swift in Sources */,
 				331B4CD42BE15A5500A58C1D /* Post.swift in Sources */,
+				33AFB1EB2BED325300744909 /* NewPost.swift in Sources */,
 				33AFB1D22BE3E3DF00744909 /* Search.swift in Sources */,
 				33AFB1D52BE53F0B00744909 /* Profile.swift in Sources */,
 				33AFB1DD2BEA859000744909 /* LocationViewModel.swift in Sources */,

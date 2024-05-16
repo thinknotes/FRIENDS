@@ -27,21 +27,21 @@ class StoryViewModel: ObservableObject {
         
        ]),
        StoryModel(profileName: "Hector", profileImage: "TreeLighting", stories: [
-            Story(imageURL: "HallofMosses"),
+            Story(imageURL: "TreeLighting"),
             Story(imageURL: "CheetahDay"),
-            Story(imageURL: "CERNCenter")
+            Story(imageURL: "TrotternishStorr")
             
         
        ]),
-       StoryModel(profileName: "Henry Jean", profileImage: "TrotternishStorr", stories: [
-        Story(imageURL: "HallofMosses"),
+       StoryModel(profileName: "Dominic", profileImage: "TrotternishStorr", stories: [
+        Story(imageURL: "VermilionCliffs"),
         Story(imageURL: "CheetahDay"),
         Story(imageURL: "CERNCenter")
         
        ]
                 ),
-       StoryModel(profileName: "Swar Jar", profileImage: "VermilionCliffs", stories: [
-        Story(imageURL: "HallofMosses"),
+       StoryModel(profileName: "Swear Jar", profileImage: "VermilionCliffs", stories: [
+        Story(imageURL: "BradgateFallow"),
         Story(imageURL: "CheetahDay"),
         Story(imageURL: "CERNCenter")
         

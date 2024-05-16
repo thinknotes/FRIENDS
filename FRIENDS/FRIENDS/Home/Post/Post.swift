@@ -8,35 +8,51 @@
 import SwiftUI
 
 struct Post: View {
-    @State var name: String = "John Smith"
-    @State var city: String = "Los Angles"
-    @State var likes: Int = 2500
-    @State var comments: Int = 1000
-    var postPics = ["AlpsCastles", "AngkorPark", "JerseyIsland"]
+    @State var name: String
+    @State var city: String
+    @State var likes: Int
+    @State var comments: Int
+    var postPics: [String]
+//    var postPics = ["AlpsCastles", "AngkorPark", "JerseyIsland"]
     var friendsPics = ["CERNCenter", "CheetahDay", "HumanKindness"]
-    @State var commentText: String = "Can't wait to see what you do next"
+    var friendsNames = ["Emily Johnson", "Michael Smith", "Jessica Martinez"]
+    @State var commentText = "Can't wait to see what you do next" /*+ "Have a great trip!!" + "So Lucky, wish i was there"*/
     @State var profilePic: Image?
     @State var showLike: Bool = false
     @State private var commentClicked: Bool = false
     @State private var likesClicked: Bool = false
     @State private var bookmarkClicked: Bool = false
     @State private var showSheet: Bool = false
+    @State var caption: String
+    @State private var dateString: String = ""
+    @State private var newComment: String = ""
+    @State private var replyComment: String = ""
+    @State var commentTraker: Bool = false
+    
+ 
     
     
     
     var body: some View {
         VStack {
             HStack {
+                
                 if let profilePics = profilePic {
-                    Image("")
+                    profilePics
                         .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 30, height: 30)
+                        .aspectRatio(contentMode: .fill)
+                        .frame(width: 40, height: 50)
+                        .clipShape(Circle())
+                        
+                        
                 } else {
                     Image(systemName: "person.circle.fill")
                         .resizable()
-                        .aspectRatio(contentMode: .fit)
+                        .aspectRatio(contentMode: .fill)
                         .frame(width: 30, height: 30)
+                        .clipShape(Circle())
+                        
+                       
                 }
 
                 
@@ -45,13 +61,17 @@ struct Post: View {
                     Text(name)
                         .bold()
                         .font(.custom("Assistant-Bold", size: 17))
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                      
                     
                     Text(city)
                         .foregroundColor(.gray)
                         .font(.custom("Assistant-Medium", size: 15))
+                        .frame(maxWidth: .infinity, alignment: .leading)
                     
                    
                 }
+                .padding()
                 .frame(maxWidth: .infinity, alignment: .leading)
                 
                 Spacer()
@@ -111,6 +131,10 @@ struct Post: View {
                     .cornerRadius(20)
                     .tabViewStyle(.page)
                 
+                Text(caption)
+                    .foregroundColor(.gray)
+                    .font(.custom("Assistant-Medium", size: 15))
+                
             }
             
             Spacer()
@@ -124,6 +148,9 @@ struct Post: View {
                        if !likesClicked {
                            likes += 1
                            likesClicked = true
+                       } else {
+                           likes -= 1
+                           likesClicked = false
                        }
                    }, label: {
                        Image(systemName: "heart.fill")
@@ -149,6 +176,9 @@ struct Post: View {
                         if !commentClicked {
                             comments += 1
                             commentClicked = true
+                        } else {
+                            comments -= 1
+                            commentClicked = false 
                         }
                     }, label: {
                         Image(systemName: "message.fill")
@@ -204,21 +234,26 @@ struct Post: View {
                 HStack {
                     
                     
-                    ForEach(friendsPics, id: \.self) { image in
-                        Image(image)
+                    ForEach(friendsPics.indices, id: \.self) { image in
+                        let Pic = friendsPics[image]
+//                        let comment = commentText[image]
+                        Image(Pic)
                                 .resizable()
                                 .aspectRatio(contentMode: .fill)
                                 .frame(width: 40, height: 40)
                                 .background(.white)
                                 .clipShape(Circle())
                                 .padding(.leading, -30)
+                        
+//                        Text("\(comment)")
+//                            .font(.custom("Assistant-Medium", size: 15))
                     }
                     
                     
 
                         
-                    Text("\(commentText)")
-                        .font(.custom("Assistant-Medium", size: 15))
+//                    Text("\(comment)")
+//                        .font(.custom("Assistant-Medium", size: 15))
                     
                     
                    Spacer()
@@ -250,6 +285,126 @@ struct Post: View {
                                 
                                 Text("\(comments) Comments")
                                     .font(.custom("Assistant-Medium", size: 25))
+                                
+                                
+//                                List {
+                                ForEach(friendsPics.indices, id: \.self) { f in
+                                    let friendPic = friendsPics[f]
+                                    let friendName = friendsNames[f]
+//                                    let friendComment = commentText[f]
+                                        
+                                            
+                                            VStack {
+                                                HStack {
+                                                    Image(friendPic)
+                                                        .resizable()
+                                                        .aspectRatio(contentMode: .fill)
+                                                        .frame(width: 50, height: 50)
+                                                        .clipShape(Circle())
+                                                    VStack {
+                                                        Text("\(friendName)")
+                                                            .font(.custom("Assistant-Bold", size: 15))
+                                                            .bold()
+                                                            .frame(maxWidth: .infinity, alignment: .leading)
+                                                        
+                                                        
+                                                            //                                                    .frame(maxWidth: .infinity, alignment: .leading)
+                                                        
+                                                        Text("\(commentText)")
+                                                            .font(.custom("Assistant-Medium", size: 15))
+                                                            .frame(maxWidth: .infinity,  alignment: .leading)
+                                                            .frame(height: 50)
+                                                        
+                                                        
+                                                        Button(action: {
+                                                            commentTraker = true
+                                                        }, label: {
+                                                            
+                                                            
+                                                            Image(systemName: "")
+                                                            Text("Reply")
+                                                                .font(.custom("Assistant-Medium", size: 15))
+                                                                .frame(maxWidth: .infinity,  alignment: .leading)
+                                                                .foregroundColor(.gray)
+                                                        })
+                                                        
+                                                        if commentTraker == true {
+                                                            HStack {
+                                                                TextField("", text: $replyComment)
+                                                                    .textFieldStyle(.roundedBorder)
+                                                                
+                                                                
+                                                                Spacer()
+                                                                
+                                                                Button(action: {
+                                                                    
+                                                                }, label: {
+                                                                    Image(systemName: "paperplane.fill")
+                                                                        .resizable()
+                                                                        .aspectRatio(contentMode: .fit)
+                                                                        .frame(width: 20, height: 20)
+                                                                        .padding()
+                                                                        .foregroundColor(.accentColor)
+                                                                })
+                                                                
+                                                                
+                                                                Button(action: {
+                                                                    commentTraker = false
+                                                                }, label: {
+                                                                    Image(systemName: "xmark")
+                                                                        .resizable()
+                                                                        .aspectRatio(contentMode: .fit)
+                                                                        .frame(width: 20, height: 20)
+                                                                        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .trailing)
+                                                                        .padding()
+                                                                        .foregroundColor(.accentColor)
+                                                                })
+                                                            }
+                                                        }
+                                                        
+                                                    }
+                                                    .padding()
+                                                    
+                                                    Text("\(Date().formatted(date: .omitted, time: .standard))")
+                                                        .font(.custom("Assistant-Medium", size: 15))
+                                                    
+                                                    
+                                                    
+                                                    
+                                                }
+                                                .padding()
+                                                
+                                              
+                                            }
+                                        
+                                    }
+                                
+                                HStack {
+                                    
+                                    TextField("Comment", text: $newComment)
+                                        .textFieldStyle(.roundedBorder)
+                                        .padding()
+                                        .frame(maxWidth: .infinity, maxHeight: .infinity)
+                                    
+                                    
+                                    Button(action: {
+                                          
+                                        
+                                        
+                                    }, label: {
+                                        Image(systemName: "paperplane.fill")
+                                            .resizable()
+                                            .aspectRatio(contentMode: .fit)
+                                            .frame(width: 30, height: 30)
+                                            .frame(maxWidth: .infinity, alignment: .trailing)
+                                            .padding()
+                                            .foregroundColor(.accentColor)
+                                    })
+                                    
+                                }
+                                
+                               
+//                                }
                             }
                             
                             ScrollView(.vertical) {
@@ -280,6 +435,6 @@ struct Post: View {
 }
 
 #Preview {
-    Post()
+    Post(name: "Mark", city: "San Franscisco, CA", likes: 0, comments: 0, postPics: [""], profilePic: Image("SF"), caption: "I love the view todau is so preety ")
        
 }

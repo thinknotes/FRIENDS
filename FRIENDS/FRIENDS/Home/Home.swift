@@ -13,20 +13,23 @@ struct Home: View {
     @State var users: [User]
     @State var loggedin: [User]
     
+    
     var body: some View {
         TabView(selection: $tabSelection) {
             MainView()
                 .tag(1)
+//              
             
             Search(allUsers: users)
                 .tag(2)
             
-            Text("Favorites")
+           favorites()
                 .tag(3)
             
-            Profile(logedin: loggedin)
+            Profile(allUsers: users, logedin: loggedin)
                 .tag(4)
         }
+        
         .overlay(alignment: .bottom) {
             Tabbar(tabSelection: $tabSelection)
         }
@@ -38,3 +41,4 @@ struct Home: View {
 #Preview {
     Home(users: [], loggedin: [])
 }
+
